@@ -1,0 +1,13 @@
+# Archivos que genera NetBeans al compilar
+build/
+dist/
+nbproject/private/
+*.class
+
+# Datos que crea el programa al correr (no se suben)
+*.dat
+facturas/
+
+# Basura del sistema
+.DS_Store
+Thumbs.db
