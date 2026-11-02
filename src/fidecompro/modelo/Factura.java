@@ -104,9 +104,9 @@ public class Factura implements Serializable {
                     d.calcularSubtotal()));
         }
         escritor.println(linea);
-        escritor.println(String.format("%52s %13.2f", "Subtotal:", calcularSubtotal()));
-        escritor.println(String.format("%52s %13.2f", "IVA (13%):", calcularImpuesto()));
-        escritor.println(String.format("%52s %13.2f", "TOTAL:", calcularTotal()));
+        escritor.println(String.format("%51s %13.2f", "Subtotal:", calcularSubtotal()));
+        escritor.println(String.format("%51s %13.2f", "IVA (13%):", calcularImpuesto()));
+        escritor.println(String.format("%51s %13.2f", "TOTAL:", calcularTotal()));
         escritor.println();
         escritor.println("Gracias por su compra");
         escritor.close();
