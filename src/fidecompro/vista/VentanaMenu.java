@@ -55,6 +55,12 @@ public class VentanaMenu extends JFrame {
             }
         });
 
+        btnProductos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new VentanaProductos().setVisible(true);
+            }
+        });
 
 
         btnCerrarSesion.addActionListener(new ActionListener() {
