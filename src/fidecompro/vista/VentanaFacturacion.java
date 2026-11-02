@@ -6,6 +6,7 @@ import fidecompro.datos.ProductoDAO;
 import fidecompro.excepciones.DatoInvalidoException;
 import fidecompro.excepciones.ExistenciasInsuficientesException;
 import fidecompro.excepciones.RegistroNoEncontradoException;
+import fidecompro.hilos.HiloFactura;
 import fidecompro.modelo.Cliente;
 import fidecompro.modelo.DetalleFactura;
 import fidecompro.modelo.Factura;
@@ -275,8 +276,9 @@ public class VentanaFacturacion extends JFrame {
             productoDAO.descontarExistencias(factura.getDetalles());
             facturaDAO.insertar(factura);
 
-            factura.generarArchivo();
-            JOptionPane.showMessageDialog(this, "Factura No. " + factura.getNumero() + " generada.\nArchivo: " + factura.getNombreArchivo());
+            // El archivo .txt se escribe en otro hilo para no congelar la ventana
+            HiloFactura hilo = new HiloFactura(factura, this);
+            hilo.start();
 
             nuevaFactura();
         } catch (ExistenciasInsuficientesException | RegistroNoEncontradoException ex) {
