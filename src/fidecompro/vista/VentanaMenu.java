@@ -48,6 +48,12 @@ public class VentanaMenu extends JFrame {
         btnCerrarSesion.setBounds(115, 205, 180, 35);
         add(btnCerrarSesion);
 
+        btnClientes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new VentanaClientes().setVisible(true);
+            }
+        });
 
 
 
