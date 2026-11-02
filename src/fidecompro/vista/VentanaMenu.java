@@ -62,6 +62,12 @@ public class VentanaMenu extends JFrame {
             }
         });
 
+        btnFacturacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new VentanaFacturacion(VentanaMenu.this.usuario).setVisible(true);
+            }
+        });
 
         btnCerrarSesion.addActionListener(new ActionListener() {
             @Override
